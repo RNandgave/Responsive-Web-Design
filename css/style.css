@@ -2,6 +2,9 @@
 
 :root {
   --primary-color: #23fa35;
+  --secondary-color: #019223;
+  --dark-color: #024211;
+  --light-color: #f4f4f4;
 }
 
 * {
@@ -137,10 +140,10 @@ img {
   right: 0;
   left: 0;
   background: #fff;
-  transform: skewY(-4deg);
-  -webkit-transform: skewY(-4deg);
-  -moz-transform: skewY(-4deg);
-  -ms-transform: skewY(-4deg);
+  transform: skewY(2deg);
+  -webkit-transform: skewY(2deg);
+  -moz-transform: skewY(2deg);
+  -ms-transform: skewY(2deg);
 }
 
 /*Stats*/
@@ -161,4 +164,46 @@ img {
 .stats .grid p {
   font-size: 20px;
   font-weight: bold;
+}
+
+/*Create a GRID layout of 
+|__|__|__|
+|__|__|__|
+2X3
+*/
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/*Span the first child so it covers a space of
+two columns and two rows automatically adjusting the other 
+elements*/
+.cli .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+/* Cloud */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/*Languages*/
+.languages .flex {
+  flex-wrap: wrap;
+}
+.languages .card {
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.languages .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.languages .card:hover {
+  transform: scale(1.08);
 }
