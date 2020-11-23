@@ -3,7 +3,7 @@
 :root {
   --primary-color: #23fa35;
   --secondary-color: #019223;
-  --dark-color: #024211;
+  --dark-color: #174a0e;
   --light-color: #f4f4f4;
 }
 
@@ -219,4 +219,43 @@ elements*/
 
 a {
   color: white;
+}
+
+/*Tablets and under*/
+@media (max-width: 900px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .showcase {
+    height: auto;
+  }
+  .showcase-text {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .showcase-form {
+    justify-content: center;
+    margin: auto;
+  }
+  .cli .grid > *:first-child {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+  .navbar .flex {
+    flex-direction: column;
+  }
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
